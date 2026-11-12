@@ -268,10 +268,40 @@ h1{background:linear-gradient(90deg,var(--ink),var(--accent));-webkit-background
 :root[data-contrast="high"] .rbx p,:root[data-contrast="high"] .rbx li,:root[data-contrast="high"] .rinfo,:root[data-contrast="high"] .tsub,:root[data-contrast="high"] .stp .pr{color:#fff!important}
 :root[data-contrast="high"] .rbtn{background:#ff9f1c!important;color:#1b1028!important}
 
+
+/* ===== marca lateral Mar Limpo ===== */
+.side-brand{
+  position:fixed;z-index:1;left:3vw;top:50%;transform:translateY(-50%);
+  width:min(27vw,350px);display:flex;flex-direction:column;align-items:center;
+  gap:10px;color:var(--accent);pointer-events:none;text-align:center;
+}
+.side-brand svg{width:100%;height:auto;overflow:visible;filter:drop-shadow(0 5px 12px color-mix(in srgb,var(--accent) 22%,transparent))}
+.side-brand .brand-name{
+  font-size:clamp(1.5rem,2.8vw,2.5rem);font-weight:900;letter-spacing:.04em;
+  color:var(--ink);line-height:1.05;text-shadow:0 2px 14px color-mix(in srgb,var(--accent) 25%,transparent)
+}
+.side-brand .brand-name span{color:var(--accent)}
+:root[data-contrast="high"] .side-brand .brand-name{color:#fff}
+@media(max-width:900px){.side-brand{display:none}}
+
 </style>
 </head>
 <body>
 <div class="ocean" aria-hidden="true"><div class="rays2"></div><div class="wv a"><svg viewBox="0 0 2400 160" preserveAspectRatio="none"><path id="ow1"/></svg></div><div class="wv b"><svg viewBox="0 0 2400 160" preserveAspectRatio="none"><path id="ow2"/></svg></div><div class="wv c"><svg viewBox="0 0 2400 160" preserveAspectRatio="none"><path id="ow3"/></svg></div><div id="bubs"></div></div>
+
+<div class="side-brand" aria-label="Mar Limpo" role="img">
+  <svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M18 112 C48 74 75 72 104 96 C132 119 155 126 181 103 C207 79 226 35 263 39 C291 42 306 68 338 69
+      M18 112 C55 139 87 145 119 130 C151 115 166 87 194 91 C222 95 238 132 267 139 C292 145 317 129 342 111"
+      fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M30 151 C89 177 139 167 180 143 C221 119 258 157 321 151"
+      fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+    <path d="M245 38 C264 18 291 14 312 27 C291 30 276 39 264 54"
+      fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  </svg>
+  <div class="brand-name">MAR <span>LIMPO</span></div>
+</div>
+
 <main id="conteudo">
 
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
