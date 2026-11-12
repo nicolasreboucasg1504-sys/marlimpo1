@@ -258,7 +258,20 @@ h1{background:linear-gradient(90deg,var(--ink),var(--accent));-webkit-background
 .skip-link:focus{top:12px}
 :root[data-contrast="high"]{--bg:#180d2b;--card:#24113d;--ink:#fff;--muted:#f0e6ff;--accent:#ff9f1c;--accent-ink:#1b1028;--line:#ff9f1c;--o1:#180d2b;--o2:#24113d;--o3:#180d2b}
 :root[data-contrast="high"] body{background:#180d2b!important;color:#fff!important}
-:root[data-contrast="high"] .ocean{display:none}
+:root[data-contrast="high"] .ocean{
+  display:block!important;
+  background:linear-gradient(180deg,#24113d 0%,#321653 55%,#180d2b 100%)!important;
+}
+:root[data-contrast="high"] .rays2{
+  background:repeating-linear-gradient(105deg,transparent 0 50px,rgba(255,159,28,.20) 85px,transparent 140px)!important;
+}
+:root[data-contrast="high"] .wv.a path{fill:rgba(255,255,255,.12)!important}
+:root[data-contrast="high"] .wv.b path{fill:rgba(255,159,28,.30)!important}
+:root[data-contrast="high"] .wv.c path{fill:rgba(75,31,112,.72)!important}
+:root[data-contrast="high"] .bb{
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.85),rgba(255,159,28,.18) 60%)!important;
+  border-color:rgba(255,159,28,.55)!important;
+}
 :root[data-contrast="high"] .screen,:root[data-contrast="high"] .box,:root[data-contrast="high"] .a11y{background:#24113d!important;color:#fff!important;border:2px solid #ff9f1c!important;box-shadow:none!important;backdrop-filter:none!important}
 :root[data-contrast="high"] h1{background:none!important;color:#ffb347!important;-webkit-text-fill-color:#ffb347!important}
 :root[data-contrast="high"] p,:root[data-contrast="high"] label,:root[data-contrast="high"] span,:root[data-contrast="high"] small{color:#fff}
