@@ -257,7 +257,20 @@ h1{background:linear-gradient(90deg,var(--ink),var(--accent));-webkit-background
 .skip-link{position:absolute;left:12px;top:-100px;z-index:20;background:#000;color:#fff;padding:10px 14px;border-radius:8px}
 .skip-link:focus{top:12px}
 :root[data-contrast="high"]{--bg:#180d2b;--card:#24113d;--ink:#fff;--muted:#f0e6ff;--accent:#ff9f1c;--accent-ink:#1b1028;--line:#ff9f1c;--o1:#180d2b;--o2:#24113d;--o3:#180d2b}
-:root[data-contrast="high"] body{background:#180d2b!important;color:#fff!important}
+:root[data-contrast="high"] body{background:transparent!important;color:#fff!important}
+:root[data-contrast="high"] .ocean{
+  display:block!important;visibility:visible!important;opacity:1!important;
+  position:fixed!important;inset:0!important;z-index:0!important;overflow:hidden!important;
+  background:linear-gradient(180deg,#24113d 0%,#321653 55%,#180d2b 100%)!important;
+}
+:root[data-contrast="high"] main{position:relative!important;z-index:1!important;background:transparent!important}
+:root[data-contrast="high"] .wv{display:block!important;visibility:visible!important;opacity:1!important}
+:root[data-contrast="high"] .wv.a path{fill:rgba(255,255,255,.16)!important}
+:root[data-contrast="high"] .wv.b path{fill:rgba(255,159,28,.38)!important}
+:root[data-contrast="high"] .wv.c path{fill:rgba(75,31,112,.88)!important}
+:root[data-contrast="high"] #bubs{display:block!important}
+:root[data-contrast="high"] .rays2{display:block!important;opacity:1!important;background:repeating-linear-gradient(105deg,transparent 0 50px,rgba(255,159,28,.24) 85px,transparent 140px)!important}
+:root[data-contrast="high"] .bb{display:block!important}
 :root[data-contrast="high"] .ocean{
   display:block!important;
   background:linear-gradient(180deg,#24113d 0%,#321653 55%,#180d2b 100%)!important;
