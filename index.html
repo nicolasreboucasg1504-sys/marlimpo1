@@ -245,11 +245,51 @@ h1{background:linear-gradient(90deg,var(--ink),var(--accent));-webkit-background
 .mph b{display:block;font-size:2.2rem;margin-bottom:6px;animation:pulse 2s infinite}
 .mpm{margin:10px 0 0;font-size:.88rem;min-height:1.3em;color:var(--muted)}.mpm.err{color:#d64545}
 .mpl{display:inline-block;margin-top:6px;font-weight:700;color:var(--accent)}
+
+/* ===== acessibilidade: leitura por voz e temas ===== */
+.a11y{position:relative;z-index:2;width:100%;margin:0 0 16px;padding:14px;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:18px;box-shadow:0 8px 24px -14px rgba(0,0,0,.35)}
+.a11y h2{font-size:1rem;margin:0 0 10px}
+.a11y-group{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.a11y button{font:inherit;font-size:.9rem;font-weight:700;padding:9px 12px;border:2px solid var(--accent);border-radius:10px;background:var(--card);color:var(--ink);cursor:pointer}
+.a11y button:focus-visible{outline:3px solid #ff9f1c;outline-offset:3px}
+.a11y button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.a11y-status{font-size:.82rem;color:var(--muted);margin:8px 0 0;min-height:1.2em}
+.skip-link{position:absolute;left:12px;top:-100px;z-index:20;background:#000;color:#fff;padding:10px 14px;border-radius:8px}
+.skip-link:focus{top:12px}
+:root[data-contrast="high"]{--bg:#fff;--card:#fff;--ink:#000;--muted:#222;--accent:#0037a6;--accent-ink:#fff;--line:#000;--o1:#fff;--o2:#fff;--o3:#fff}
+:root[data-contrast="high"] body{background:#fff!important;color:#000!important}
+:root[data-contrast="high"] .ocean{display:none}
+:root[data-contrast="high"] .screen,:root[data-contrast="high"] .box,:root[data-contrast="high"] .a11y{background:#fff!important;color:#000!important;border:2px solid #000!important;box-shadow:none!important;backdrop-filter:none!important}
+:root[data-contrast="high"] h1{background:none!important;color:#000!important;-webkit-text-fill-color:#000!important}
+:root[data-contrast="high"] p,:root[data-contrast="high"] label,:root[data-contrast="high"] span,:root[data-contrast="high"] small{color:#111}
+:root[data-contrast="high"] .btn,:root[data-contrast="high"] .opt,:root[data-contrast="high"] .a11y button{background:#0037a6!important;color:#fff!important;border:2px solid #000!important;box-shadow:none!important}
+:root[data-contrast="high"] a{color:#0037a6!important;text-decoration:underline}
+:root[data-contrast="high"] .rbx,:root[data-contrast="high"] .trk{background:#fff!important;color:#000!important;border:2px solid #000!important}
+:root[data-contrast="high"] .rbx p,:root[data-contrast="high"] .rbx li,:root[data-contrast="high"] .rinfo,:root[data-contrast="high"] .tsub,:root[data-contrast="high"] .stp .pr{color:#111!important}
+:root[data-contrast="high"] .rbtn{background:#0037a6!important;color:#fff!important}
+
 </style>
 </head>
 <body>
 <div class="ocean" aria-hidden="true"><div class="rays2"></div><div class="wv a"><svg viewBox="0 0 2400 160" preserveAspectRatio="none"><path id="ow1"/></svg></div><div class="wv b"><svg viewBox="0 0 2400 160" preserveAspectRatio="none"><path id="ow2"/></svg></div><div class="wv c"><svg viewBox="0 0 2400 160" preserveAspectRatio="none"><path id="ow3"/></svg></div><div id="bubs"></div></div>
-<main>
+<main id="conteudo">
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<section class="a11y" aria-label="Opções de acessibilidade">
+  <h2>♿ Acessibilidade</h2>
+  <div class="a11y-group" role="group" aria-label="Leitura por voz">
+    <button type="button" id="voiceStart">🔊 Ler página</button>
+    <button type="button" id="voicePause" disabled>Pausar</button>
+    <button type="button" id="voiceResume" disabled>Continuar</button>
+    <button type="button" id="voiceStop" disabled>Parar</button>
+  </div>
+  <div class="a11y-group" role="group" aria-label="Aparência e contraste">
+    <button type="button" data-theme-choice="light" aria-pressed="true">☀️ Modo claro</button>
+    <button type="button" data-theme-choice="dark" aria-pressed="false">🌙 Modo escuro</button>
+    <button type="button" data-theme-choice="high" aria-pressed="false">◐ Alto contraste</button>
+  </div>
+  <p class="a11y-status" id="a11yStatus" role="status" aria-live="polite">Escolha uma opção de leitura ou aparência.</p>
+</section>
 
 <section class="screen" id="pay">
   <h1>🌊 Mar Limpo</h1>
@@ -429,7 +469,7 @@ h1{background:linear-gradient(90deg,var(--ink),var(--accent));-webkit-background
 
   <section class="box yt">
     <h2>▶ Assista ao vídeo</h2>
-    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/opwJ0pj-BQ8" title="Vídeo do Mar Limpo" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/H7tiNVG50T8" title="Vídeo atualizado do Mar Limpo" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     <p>Acompanhe as limpezas, os bastidores e os resultados de cada doação.</p>
     <a class="btn" data-l="yt">Assistir no YouTube</a>
   </section>
@@ -447,7 +487,7 @@ h1{background:linear-gradient(90deg,var(--ink),var(--accent));-webkit-background
 </main>
 <script>
 /* Edite aqui seus links reais */
-const LINKS={yt:"https://youtu.be/opwJ0pj-BQ8",wa:"https://wa.me/5584999999999",ig:"https://www.instagram.com/seuperfil"};
+const LINKS={yt:"https://youtu.be/H7tiNVG50T8",wa:"https://wa.me/5584999999999",ig:"https://www.instagram.com/seuperfil"};
 document.querySelectorAll("[data-l]").forEach(a=>{a.href=LINKS[a.dataset.l];a.target="_blank";a.rel="noopener"});
 
 const $=id=>document.getElementById(id);
@@ -664,6 +704,57 @@ $("back").addEventListener("click",()=>{
   document.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed","false"));
   $("other").hidden=true;refresh();show("pay");
 });
+
+/* ===== controles de acessibilidade ===== */
+(function(){
+  const status=document.getElementById("a11yStatus");
+  const start=document.getElementById("voiceStart");
+  const pause=document.getElementById("voicePause");
+  const resume=document.getElementById("voiceResume");
+  const stop=document.getElementById("voiceStop");
+  const voiceButtons=[pause,resume,stop];
+  function voiceState(active,paused){
+    pause.disabled=!active||paused;
+    resume.disabled=!active||!paused;
+    stop.disabled=!active;
+  }
+  start.addEventListener("click",()=>{
+    if(!("speechSynthesis" in window)||!("SpeechSynthesisUtterance" in window)){
+      status.textContent="Seu navegador não oferece leitura por voz. Tente usar outro navegador.";
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const text=document.querySelector("main").innerText
+      .replace(/♿ Acessibilidade[\s\S]*?Escolha uma opção de leitura ou aparência\./,"")
+      .trim();
+    const utterance=new SpeechSynthesisUtterance(text);
+    utterance.lang="pt-BR";
+    utterance.rate=0.95;
+    utterance.onstart=()=>{voiceState(true,false);status.textContent="Leitura por voz em andamento.";};
+    utterance.onend=()=>{voiceState(false,false);status.textContent="Leitura concluída.";};
+    utterance.onerror=()=>{voiceState(false,false);status.textContent="Não foi possível iniciar a leitura por voz.";};
+    window.speechSynthesis.speak(utterance);
+  });
+  pause.addEventListener("click",()=>{window.speechSynthesis.pause();voiceState(true,true);status.textContent="Leitura pausada.";});
+  resume.addEventListener("click",()=>{window.speechSynthesis.resume();voiceState(true,false);status.textContent="Leitura continuada.";});
+  stop.addEventListener("click",()=>{window.speechSynthesis.cancel();voiceState(false,false);status.textContent="Leitura interrompida.";});
+  document.querySelectorAll("[data-theme-choice]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      const choice=button.dataset.themeChoice;
+      if(choice==="high"){
+        document.documentElement.dataset.contrast="high";
+        document.documentElement.dataset.theme="light";
+      }else{
+        delete document.documentElement.dataset.contrast;
+        document.documentElement.dataset.theme=choice;
+      }
+      document.querySelectorAll("[data-theme-choice]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+      status.textContent=choice==="high"?"Alto contraste ativado.":(choice==="dark"?"Modo escuro ativado.":"Modo claro ativado.");
+    });
+  });
+  window.addEventListener("beforeunload",()=>{if("speechSynthesis" in window)window.speechSynthesis.cancel();});
+})();
+
 </script>
 </body>
 </html>
